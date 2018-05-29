@@ -19,10 +19,24 @@ $(document).ready(function() {
             var current = $('div[data-panel="'+ (position - 1) +'"]');
 
             current.find('.wrapper').animate({left:"-=100px", opacity:0}, 500, function() {
-
+                
+                // Hide current
                 current.addClass('hidden');
 
+                // Show next
+                var next = $('div[data-panel="'+ position +'"]');
+                next.removeClass('hidden');
+                showNext(next);
             });
+
+            this.showNext = function(next) {
+                var wrapper = next.find('.wrapper');
+
+                wrapper.fadeIn('500', function() {
+                    //
+
+                });
+            }
 
         }
 
