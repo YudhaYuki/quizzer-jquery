@@ -33,8 +33,19 @@ $(document).ready(function() {
                 var wrapper = next.find('.wrapper');
 
                 wrapper.fadeIn('500', function() {
-                    //
+                    manageOptions(next) 
 
+                });
+            };
+
+            this.manageOptions = function(next) {
+                var options = next.find('.options');
+                var childrens = options.find('div');
+                var counter = 0;
+
+                childrens.each(function(i, el) {
+                    $(el).delay(counter).fadeIn(300);
+                    counter += 500;
                 });
             }
 
