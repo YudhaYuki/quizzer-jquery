@@ -68,6 +68,7 @@ $(document).ready(function() {
 
                 if (validateSelection($(this))) {
                     showPanel(next);
+                    showProgressAndStore(next);
                 }
 
             });
@@ -85,6 +86,10 @@ $(document).ready(function() {
                 return false;
             }
 
+        }
+
+        this.showProgressAndStore = function(panel) {
+            $('.progress .bar').animate({"width":"+=25%"}, 500);
         }
 
 
