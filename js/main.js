@@ -1,6 +1,10 @@
 $(document).ready(function() {
 
     (function startQuiz() {
+
+        this.settings = {
+            results: []
+        };
         
         this.loadQuiz = function() {
 
@@ -90,13 +94,15 @@ $(document).ready(function() {
 
         this.showProgressAndStore = function(panel) {
             $('.progress .bar').animate({"width":"+=25%"}, 500);
+
+            var options = $('div[data-panel ="'+ (panel - 1) +'"]').find('.options');
+            options.find('div').each(function(i, el) {
+                if($(this).hasClass('active')){
+                    settings.results.push($(this).text());
+                    console.log(settings.results)
+                }
+            })
         }
-
-
-
-
-
-
 
         loadQuiz();
 
