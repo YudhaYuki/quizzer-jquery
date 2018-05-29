@@ -47,7 +47,17 @@ $(document).ready(function() {
                     $(el).delay(counter).fadeIn(300);
                     counter += 500;
                 });
+
+                // Select an option
+                childrens.on("click", function() {
+                    childrens.removeClass('active');
+                    next.addClass('valid');
+                    $(this).addClass('active');
+                })
+            
             }
+
+
 
         }
 
